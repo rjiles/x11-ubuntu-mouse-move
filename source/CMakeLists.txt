@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.22.1)
+project(movemouse)
+find_package(X11 REQUIRED)
+IF (X11_FOUND)
+    INCLUDE_DIRECTORIES(${X11_INCLUDE_DIR})
+    LINK_LIBRARIES(${X11_LIBRARIES})
+ENDIF ( X11_FOUND )
+add_executable(movemouse movemouse.cpp)
